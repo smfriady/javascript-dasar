@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+
+<body>
+    <script>
+        // Arrow function dengan block kode
+        const sayHello = (name) => {
+            const say = `Hello ${name}`;
+
+            document.writeln(`<p>${say}</p>`);
+        }
+        sayHello("Sony");
+
+        // Arrow function tanpa block kode
+        const sayHi = (name) => document.writeln(`<p>Hi ${name}</p>`);
+        sayHi("Sony");
+
+        // Arrow function bisa mengembalikan value
+        const sum = (first, second) => document.writeln(`<p>Sum ${first + second}</p>`);
+        sum(10, 2);
+
+        // Arrow function sebagai parameter
+        function giveMeName(callback) {
+            callback("Sony");
+        }
+        giveMeName((name) => document.writeln(`<p>Haiii ${name}</p>`));
+    </script>
+</body>
+
+</html>
