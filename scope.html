@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope JavaScript</title>
+</head>
+
+<body>
+    <script>
+        // global scope
+        let counter = 0;
+
+        // function hitMe GlobalScope
+        function hitMe() {
+            // Local scope hitMe
+            counter++;
+        }
+
+        hitMe();
+        hitMe();
+
+        document.writeln(`<p>Counter = ${counter}</p>`);
+
+        // function first GlobalScope
+        function first() {
+            // function first LocalScope
+            let firstVariable = "First";
+            document.writeln(`<p>Local Scope = ${firstVariable}</p>`);
+        }
+        // function second GlobalScope
+        function second() {
+            // function second LocalScope
+            let secondVariable = "Second";
+
+            function printSecondVariable(){
+                // function printSecondVariable LocalScope
+                document.writeln(`<p>Local Scope = ${secondVariable}</p>`);
+            }
+
+            printSecondVariable();
+        }
+
+        first();
+        second();
+    </script>
+</body>
+
+</html>
